@@ -66,7 +66,7 @@
 
 <div id="body" class="h-screen bg-stone-950 text-white">
     <WorksHead title="Streetlamps"/>
-    <div id="poem" class="w-screen flex flex-col justify-center items-center">
+    <div id="poem" class="w-screen flex flex-col justify-center items-center text-xl">
         <div>
             <p>&nbsp;&nbsp;&nbsp;Twas the eve before Christmas</p>
             <p>All was snowy and snivvy on the ground</p>
