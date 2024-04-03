@@ -77,7 +77,7 @@
 <style>
     .body {
         display: block;
-        background-image: url("../../../lib/imgs/beach_THREEwater_ani.gif");
+        background-image: url("/imgs/beach_THREEwater_ani.gif");
         background-size: cover;
     }
     .stanza {
