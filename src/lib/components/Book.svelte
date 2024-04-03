@@ -1,11 +1,9 @@
 <!-- Book.svelte -->
 <script>
     import { spring } from 'svelte/motion';
-    import { titleStore } from "../../stores/titleStore.js";
 
     export let src;
     export let href;
-    export let title;
 
     let lifted = false;
     let y;
@@ -42,13 +40,11 @@
             href={href}
             on:mouseenter={() => {
       lifted = true;
-      titleStore.set(typeof title === 'object' ? JSON.stringify(title) : title);
     }}
             on:mouseleave={() => {
       lifted = false;
-        titleStore.set('');
     }}
     >
-        <img {src} alt="Book Cover" style="transform: translate(0, {$y}px); transition: transform 0.4s;" />
+        <img src={src} alt="Book Cover" style="transform: translate(0, {$y}px); transition: transform 0.4s;" />
     </a>
 </div>
