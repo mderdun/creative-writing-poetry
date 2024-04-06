@@ -64,7 +64,7 @@
     });
 </script>
 
-<div id="body" class="h-screen bg-stone-950 text-white">
+<div id="body" class="min-h-screen bg-stone-950 text-white">
     <WorksHead title="Streetlamps"/>
     <div id="poem" class="w-screen flex flex-col justify-center items-center text-xl">
         <div>
