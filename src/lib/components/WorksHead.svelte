@@ -1,5 +1,7 @@
 <script>
     export let title;
+
+    export let subtitle = ''
 </script>
 
 <nav class="flex justify-center items-center h-16 relative bottom-2">
@@ -9,5 +11,8 @@
         </svg>
         <p class="text-lg">Back</p>
     </a>
-    <h1 class="text-2xl">{title}</h1>
+    <div id="work" class="flex items-baseline">
+        <h1 class="text-2xl">{title}</h1>
+        <p class="text-md ml-3">{subtitle}</p>
+    </div>
 </nav>

@@ -1,6 +1,7 @@
 <script lang="ts">
     import WorksHead from "$lib/components/WorksHead.svelte";
     import { onMount } from "svelte";
+    import { cursorColor, cursorPosition } from "$lib/stores.js";
 
     let intervalId: number | undefined;
     let isFlickering = false;
@@ -9,14 +10,21 @@
     let mouseY = 0;
     let lastMousePosition = { x: 0, y: 0 };
     let lastMouseMovedTime = Date.now();
+    const speed = 0.25;
 
     onMount(() => {
+        cursorColor.set("white");
         const light = document.querySelector(".light") as HTMLElement;
         const body = document.querySelector("#body") as HTMLElement;
 
+        cursorPosition.subscribe(value => {
+            mouseX = value.x;
+            mouseY = value.y;
+        });
+
         body.addEventListener("mousemove", (e: MouseEvent) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
+            mouseX += (e.clientX - mouseX) * speed;
+            mouseY += (e.clientY - mouseY) * speed;
             lastMouseMovedTime = Date.now();
             lastMousePosition = { x: mouseX, y: mouseY };
             light.style.background = `radial-gradient(circle at ${mouseX}px ${mouseY}px, transparent 2%, rgba(0, 0, 0, 0.95) 5%)`;

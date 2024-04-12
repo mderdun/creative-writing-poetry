@@ -1,6 +1,7 @@
 <script>
     import WorksHead from "$lib/components/WorksHead.svelte";
     import { onMount } from 'svelte';
+    import { cursorColor } from '$lib/stores.js';
 
     function handleHoverEffect(classGroups) {
         classGroups.forEach(classNames => {
@@ -10,12 +11,14 @@
                 element.addEventListener('mouseover', () => {
                     elements.forEach((el) => {
                         el.style.color = '#e1efff'; // Change this to the color you want
+                        el.style.textShadow = '0 0 5px #3c536e'
                     });
                 });
 
                 element.addEventListener('mouseout', () => {
                     elements.forEach((el) => {
                         el.style.color = ''; // Change this to the original color
+                        el.style.textShadow = '';
                     });
                 });
             });
@@ -23,6 +26,7 @@
     }
 
     onMount(() => {
+        cursorColor.set('#3c536e');
         handleHoverEffect([['dear'], ['alt', 'alt2']]);
     });
 </script>
@@ -44,7 +48,7 @@
         <div id="stanza1" class="stanza">
             <p class="dear">truth: he has a car we can't afford</p>
             <p class="dear">my dear</p>
-            <p class="dear">but look: only fools are in a hurry—how much more dignified it is to walk</p>
+            <p class="dear">but look: only fools are in a hurry——how much more dignified it is to walk</p>
             <p class="dear">my dear</p>
         </div>
         <div id="stanza2" class="stanza">
@@ -52,7 +56,7 @@
             <p class="alt">two skippers from the london docks found it one year a forgotten wine barrel they took off the lid and both of them they were terrified; from the barrel the person of the six-winged seraph! serafin was walking up the stairs like a sweet lamp and it smelled</p>
             <p class="dear">my dear</p>
             <p class="alt">but it was decreasing</p>
-            <p class="dear">but why london? london—burrow: in “paris-soir” I read yesterday</p>
+            <p class="dear">but why london? london-burrow: in “paris-soir” I read yesterday</p>
             <p class="alt">and the poor kippers they scratched their heads</p>
             <p class="dear">that marquis q</p>
             <p class="alt">that character is not a local</p>
@@ -63,7 +67,7 @@
             <p class="dear">a baronet</p>
             <p class="alt">they were shaking under the beds of barbers and astronomers</p>
             <p class="dear">he poisoned his wife with dog noodles... to bloody hell with london</p>
-            <p class="alt2">this sad london our seraphim is wandering</p>
+            <p class="alt2">this sad london our seraph is wandering</p>
             <p class="dear">my dear !</p>
         </div>
         <div id="stanza4" class="stanza">
@@ -124,6 +128,9 @@
     .alt2{
         margin-left: -2.68em;
         margin-top: -0.8em;
+    }
+    .dear, .alt, .alt2 {
+        transition: color 0.3s ease, text-shadow 0.3s ease;
     }
     p {
         padding-left: 1em;

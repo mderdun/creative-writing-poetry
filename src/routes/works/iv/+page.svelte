@@ -1,10 +1,16 @@
 <script>
     import WorksHead from "$lib/components/WorksHead.svelte";
     import FBPost from "$lib/components/FBPost.svelte";
+    import {onMount} from "svelte";
+    import {cursorColor} from "$lib/stores.js";
+
+    onMount(() => {
+        cursorColor.set('white');
+    });
 </script>
 
 <div id="body" class="bg-[#18191a] min-h-screen text-[#e4e6eb]">
-    <WorksHead title="Some Needs of Our Polish Community Across London,&nbsp;&nbsp;Collected Digitally,&nbsp;&nbsp;Winter -> Spring 2024" />
+    <WorksHead title="Some Needs of Our Polish Community Across London" subtitle="Collected Digitally,&nbsp;&nbsp;Winter -> Spring 2024" />
     <div id="poem" class="flex flex-col items-center text-xl">
         <FBPost>
             <p>we look for muscular poles</p>

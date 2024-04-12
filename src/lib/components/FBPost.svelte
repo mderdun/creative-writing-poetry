@@ -1,5 +1,5 @@
 <script>
-    import ReactionBar from "$lib/components/ReactionBar.svelte";
+    // import ReactionBar from "$lib/components/ReactionBar.svelte";
 </script>
 
 <div id="card" class="bg-[#242526] rounded-xl my-2 flex flex-col w-[35rem]">
