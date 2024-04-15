@@ -21,7 +21,7 @@
             <IndexBox n="v" title="The Great Library" c1="white" c2="black"/>
         </div>
         <div id="bottom-row" class="flex w-screen h-1/2">
-            <IndexBox n="vi" title="The Great Library" c1="black" c2="white"/>
+            <IndexBox n="vi" title="Ode on a Polish Urn" c1="#0007a7" c2="#e4e4e2"/>
             <IndexBox n="vii" title="The Great Library" c1="white" c2="black"/>
             <IndexBox n="viii" title="the great a©ker-gram" c1="black" c2="white"/>
             <IndexBox n="ix" title="The Great Library" c1="white" c2="black"/>
