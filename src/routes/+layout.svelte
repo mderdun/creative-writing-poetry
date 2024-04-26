@@ -3,6 +3,7 @@
     import { onMount } from "svelte";
     import { onNavigate } from "$app/navigation";
     import { cursorColor, cursorPosition } from "$lib/stores.js";
+    import { passwordEntered } from "$lib/stores.js";
 
     onNavigate((navigation) => {
         if (!document.startViewTransition) return;
@@ -23,7 +24,7 @@
     let currentAngle = 0;
     const speed = 0.35;
 
-    onMount(() => {
+    onMount(async () => {
         let currentCursorColor;
 
         cursorPosition.subscribe(value => {
@@ -92,13 +93,30 @@
         }
 
         tick();
+
+        let password;
+
+        await passwordEntered.subscribe(value => {
+            if (!value) {
+                document.body.style.filter = 'blur(8px)';
+                password = window.prompt("Enter the password to access the site", "");
+                if (password === "cwp2024") {
+                    passwordEntered.set(true);
+                    document.body.style.filter = 'none';
+                } else {
+                    location.reload();
+                }
+            }
+        });
     });
 </script>
 
 <slot />
-<div class="circle" bind:this={circleElement}></div>
+
+<div class="circle" bind:this={circleElement} />
 
 <style>
+
     :global(:root) {
         cursor: none;
     }

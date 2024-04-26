@@ -41,15 +41,27 @@
             </div>
             <div id="methodology">
                 <div class="sticky box" class:isStuck use:sticky={{ stickToTop: true }} on:stuck="{handleStuck}"><p>Methodology</p></div>
-                <p><span id="num">3</span> Lay bare all your parents, all the utterances that have shaped you, that still can, even in their opposition or lack. Now it is time to interrogate them not for the signs that automate their readability, that outsource meaning, but read what they <span class="under">really, consequentially</span> mean.</p>
-                <p><span id="num">1</span> Desire all experience in all positions and situations. Try everything on. Play with desire of penetrator and penetrable, give and take, see what happens.</p>
-                <p><span id="num">2</span> Create a space where your utterance can try to dominate no matter the opposition. But also where it can be safe being dominated, getting all things it wants.</p>
+                <p><span id="num">3</span> Lay bare all your parents, all the utterances that have shaped you, that still can, even in their opposition or lack. Now it is time to interrogate them not for the signs which automate their readability, that outsource meaning-making, but read them for what they <span class="under">really, consequentially</span> mean.</p>
+                <p><span id="num">1</span> Desire all experience in all positions and situations. Try everything on. Play with desire of penetrator and penetrable, give and take. See what happens.</p>
+                <p><span id="num">2</span> Create a space where your utterance can direct and dominate no matter the opposition. But also where it can be safe being dominated, getting all things it wants.</p>
                 <p><span id="num">4</span> Undermine all authority and agency, give yourself over to the anti-ethics of working machinically so it carries you outside but also burrows into you, becoming cyborg—only by being implanted can you “get outside” your condition.</p>
             </div>
             <div id="reading">
                 <div class="sticky box" class:isStuck use:sticky={{ stickToTop: true }} on:stuck="{handleStuck}"><p>Reading</p></div>
                 <p><span id="num">1</span> How do you approach the desire to see into the text? The same way that the text is written. It requires give-and-take.</p>
                 <p><span id="num">4</span> You give up your control (no more privileged critic who knows all and selects relevance and quotation and receives authority of voice) now you give over agency of reading (this will be automated for you) so that you can receive sight this will feed your desire to experience more of everything. You bypass system of representation and allegory and you receive a diagram which is yours to inhabit and explore.</p>
+                <p><span id="num">2</span>&<span id="num">3</span> All things can be read as such and nothing is not utterance. All things have their parents too and nothing is not progeny. You read your science and you read your poetry. Beyond them there is something that is the blob the connection of all things. Are you religious? But everything is everything.</p>
+            </div>
+            <div id="acker" class="flex flex-col justify-center items-center">
+                <div class="sticky box"><p>In Memoriam to Kathy's Identity</p></div>
+                <img src="/imgs/kathy.gif" class="w-full mb-5"/>
+                <div class="mb-10">
+                    <p><span id="num">A</span> is for alternatives.</p>
+                    <p><span id="num">C</span> is for collecting.</p>
+                    <p><span id="num">K</span> is for a krime.</p>
+                    <p><span id="num">E</span> could be everything.</p>
+                    <p><span id="num">R</span> is for when you like to read a book!</p>
+                </div>
             </div>
         </div>
     </div>

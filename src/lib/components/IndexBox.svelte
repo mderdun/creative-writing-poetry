@@ -1,15 +1,12 @@
 <script>
-    import { fade } from 'svelte/transition';
     export let n;
     export let title;
-    export let c1;
-    export let c2;
 </script>
 
-<div class="card" style="background-color: {c2}; color: {c1};">
+<div class="card">
     <a href="/works/{n}">
     <div class="numeral">{n}</div>
-    <div class="title" in:fade={{duration: 200}} out:fade={{duration: 200}}>{title}</div>
+    <div class="title">{title}</div>
     </a>
 </div>
 
@@ -19,9 +16,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: background-color 0.3s, color 0.3s;
+        border-radius: 5%;
+        background-color: white;
+        color: black;
+        transition: all 0.3s ease;
         cursor: none;
         margin: 3px;
+    }
+
+    .card:hover {
+        background-color: var(--c2);
+        color: var(--c1);
     }
 
     .card:hover .numeral {

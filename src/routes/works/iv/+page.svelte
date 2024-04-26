@@ -10,7 +10,7 @@
 </script>
 
 <div id="body" class="bg-[#18191a] min-h-screen text-[#e4e6eb]">
-    <WorksHead title="Some Needs of Our Polish Community Across London" subtitle="Collected Digitally,&nbsp;&nbsp;Winter -> Spring 2024" />
+    <WorksHead title="some needs of our polish community" subtitle="Across London,&nbsp;&nbsp;Collected Digitally,&nbsp;&nbsp;Winter -> Spring 2024" />
     <div id="poem" class="flex flex-col items-center text-xl">
         <FBPost>
             <p>we look for muscular poles</p>
@@ -36,16 +36,16 @@
         </FBPost>
         <FBPost>
             <p>we have a need for jobs</p>
-            <p>we are available since yesterday</p>
-            <p>we are plasterers that take orders</p>
-            <p>for the price of plastering</p>
         </FBPost>
         <FBPost>
-            <p>bathroom sets</p>
+            <p>we are available since yesterday</p>
+        </FBPost>
+        <FBPost>
+            <p>we are plasterers that take orders</p>
+            <p>for the price of plastering</p>
+            <p>for bathroom sets</p>
             <p>vocabulary</p>
-            <p>polish internet television that’s not worth millions</p>
-            <p>and private messages too</p>
-            <p>we have all these</p>
+            <p>& polish internet television that’s not worth millions</p>
         </FBPost>
     </div>
 </div>

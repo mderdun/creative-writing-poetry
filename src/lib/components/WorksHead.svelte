@@ -13,6 +13,6 @@
     </a>
     <div id="work" class="flex items-baseline">
         <h1 class="text-2xl">{title}</h1>
-        <p class="text-md ml-3">{subtitle}</p>
+        <p class="text-xs ml-3 uppercase">{subtitle}</p>
     </div>
 </nav>

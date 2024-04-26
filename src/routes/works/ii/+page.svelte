@@ -3,8 +3,10 @@
     import SplitType from "split-type";
     import { onMount } from "svelte";
     import WorksHead from "$lib/components/WorksHead.svelte";
+    import { cursorColor } from "$lib/stores.js";
 
     onMount(() => {
+        cursorColor.set('black')
         const poemParagraphs = document.querySelectorAll("#poem p");
         poemParagraphs.forEach(paragraph => {
             const words = new SplitType(paragraph, {
@@ -30,55 +32,28 @@
 </script>
 
 <div id="body">
-    <WorksHead title="Summoning Words" />
+    <WorksHead title="you send words till they're gone" subtitle="hover over them and see what happens" />
     <div id="poem" class="text-xl w-screen flex justify-center items-center">
         <div>
-            <p>Summoning words</p>
-            <p>from the dark</p>
-            <p>to the light</p>
-            <p>from the light</p>
-            <p>to the dark</p>
-            <p>Summoning words</p>
-            <p>from the past</p>
-            <p>to the present</p>
-            <p>from the present</p>
-            <p>to the future</p>
-            <p>Summoning words</p>
-            <p>from the dead</p>
-            <p>to the living</p>
-            <p>from the living</p>
-            <p>to the dead</p>
-            <p>Summoning words</p>
-            <p>from the heart</p>
-            <p>to the mind</p>
-            <p>from the mind</p>
-            <p>to the heart</p>
-            <p>Summoning words</p>
-            <p>from the body</p>
-            <p>to the soul</p>
-            <p>from the soul</p>
-            <p>to the body</p>
-            <p>Summoning words</p>
-            <p>from the earth</p>
-            <p>to the sky</p>
-            <p>from the sky</p>
-            <p>to the earth</p>
-            <p>Summoning words</p>
-            <p>from the water</p>
-            <p>to the fire</p>
-            <p>from the fire</p>
-            <p>to the water</p>
-            <p>Summoning words</p>
-            <p>from the wind</p>
-            <p>to the rain</p>
-            <p>from the rain</p>
-            <p>to the wind</p>
-            <p>Summoning words</p>
-            <p>from the light</p>
-            <p>to the dark</p>
-            <p>from the dark</p>
-            <p>to the light</p>
-            <p>Summoning words</p>
+            <p>even i could</p>
+            <p>and could be good</p>
+            <p>and nothing</p>
+            <p>and even i would</p>
+            <p>and could and nothing</p>
+            <p>so nothing is good</p>
+            <p>even when there is something</p>
+            <p class="ml-36">or</p>
+            <p>must there be always boats</p>
+            <p>or trees or thimbles too</p>
+            <p>or might there just be nothing</p>
+            <p>so wide and blue to make</p>
+            <p>a something out of should</p>
+            <p class="ml-52">or could</p>
+            <p>a bloom too too</p>
+            <p>that goodness is for nothing</p>
+            <p>that lends itself to milkbun</p>
+            <p class="ml-64">icing</p>
+            <p>burns itself to stuffing</p>
         </div>
     </div>
 </div>
@@ -86,5 +61,6 @@
 <style>
     p {
         word-spacing: 10px;
+        line-height: 2;
     }
 </style>

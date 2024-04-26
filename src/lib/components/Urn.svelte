@@ -10,38 +10,21 @@ Title: Urn
 <script>
   import {Group, MeshBasicMaterial} from 'three'
   import { T, forwardEventHandlers } from '@threlte/core'
-  import {OrbitControls, useGltf, useTexture} from '@threlte/extras'
+  import {useSuspense, useGltf, useTexture} from '@threlte/extras'
 
   export const ref = new Group()
 
-  const gltf = useGltf('/models/urn/urn-transformed.glb', { useDraco: true })
+  const suspend = useSuspense()
+
+  const gltf = suspend(useGltf('/models/urn/urn-transformed.glb', { useDraco: true }))
 
   const component = forwardEventHandlers()
 
-  const texture = useTexture('/models/urn/material_baseColor.png')
+  const texture = suspend(useTexture('/models/urn/material_baseColor.png'))
 </script>
 
-<T.PerspectiveCamera
-        makeDefault
-        position={[0, 7, 20]}
-        fov={10}
->
-  <OrbitControls
-          enableRotate
-          autoRotate
-          autoRotateSpeed={-1.35}
-          rotateSpeed={0.5}
-          enableDamping
-          enableZoom={false}
-          minPolarAngle={Math.PI / 2.5}
-          maxPolarAngle={Math.PI / 2.5}
-  />
-</T.PerspectiveCamera>
-
 <T is={ref} dispose={false} {...$$restProps} bind:this={$component}>
-  {#await gltf}
-    <slot name="fallback" />
-  {:then gltf}
+  {#await gltf then gltf}
     {#await texture then tex}
       <T.Group rotation={[-Math.PI / 2, 0, 0]} scale={1.4} position={[0, -1.5, 0]}>
         <T.Mesh

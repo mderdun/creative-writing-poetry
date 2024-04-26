@@ -4,7 +4,7 @@
     import {cursorColor} from "$lib/stores.js";
 
     onMount(() => {
-        cursorColor.set('red');
+        cursorColor.set('black');
     });
 </script>
 
@@ -14,18 +14,18 @@
     </div>
     <div id="grid" class="flex flex-col w-screen h-[90vh]">
         <div id="top-row" class="flex w-screen h-1/2">
-            <IndexBox n="i" title="Streetlamps" c1="white" c2="black"/>
-            <IndexBox n="ii" title="Summoning Words" c1="black" c2="white"/>
-            <IndexBox n="iii" title="my dear miracle in the winery" c1="green" c2="#e1efff"/>
-            <IndexBox n="iv" title="Some Needs of Our Polish Community Across London" c1="black" c2="white"/>
-            <IndexBox n="v" title="The Great Library" c1="white" c2="black"/>
+            <IndexBox n="i" title="when in dark"/>
+            <IndexBox n="ii" title="you send words till they're gone"/>
+            <IndexBox n="iii" title="my dear miracle in the winery"/>
+            <IndexBox n="iv" title="some needs of our polish community"/>
+            <IndexBox n="v" title="the way we love is like we're here but we're not"/>
         </div>
         <div id="bottom-row" class="flex w-screen h-1/2">
-            <IndexBox n="vi" title="Ode on a Polish Urn" c1="#0007a7" c2="#e4e4e2"/>
-            <IndexBox n="vii" title="The Great Library" c1="white" c2="black"/>
-            <IndexBox n="viii" title="the great a©ker-gram" c1="black" c2="white"/>
-            <IndexBox n="ix" title="The Great Library" c1="white" c2="black"/>
-            <IndexBox n="x" title="The Great Library" c1="black" c2="white"/>
+            <IndexBox n="vi" title="ode on a polish urn"/>
+            <IndexBox n="vii" title="i feel like ascii-ng"/>
+            <IndexBox n="viii" title="the great a©ker-gram"/>
+            <IndexBox n="ix" title="garden too concrete"/>
+            <IndexBox n="x" title="so badly breaking it hurts"/>
         </div>
     </div>
 </div>

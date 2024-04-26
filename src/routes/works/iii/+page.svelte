@@ -1,7 +1,9 @@
 <script>
+    import { onMount, afterUpdate } from 'svelte';
     import WorksHead from "$lib/components/WorksHead.svelte";
-    import { onMount } from 'svelte';
     import { cursorColor } from '$lib/stores.js';
+
+    let classGroups = [['dear'], ['alt', 'alt2']];
 
     function handleHoverEffect(classGroups) {
         classGroups.forEach(classNames => {
@@ -14,7 +16,6 @@
                         el.style.textShadow = '0 0 5px #3c536e'
                     });
                 });
-
                 element.addEventListener('mouseout', () => {
                     elements.forEach((el) => {
                         el.style.color = ''; // Change this to the original color
@@ -27,7 +28,10 @@
 
     onMount(() => {
         cursorColor.set('#3c536e');
-        handleHoverEffect([['dear'], ['alt', 'alt2']]);
+    });
+
+    afterUpdate(() => {
+        handleHoverEffect(classGroups);
     });
 </script>
 
