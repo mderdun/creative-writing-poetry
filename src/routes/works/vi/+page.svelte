@@ -38,9 +38,9 @@
             />
         </svg>
     </div>
-<!--    <div id="loader" class="absolute top-0 left-0 w-full h-full flex justify-center items-center z-0">-->
-<!--        <div class="text-2xl">Loading...</div>-->
-<!--    </div>-->
+    <div id="loader" class="absolute top-0 left-0 w-full h-full flex justify-center items-center z-0">
+        <div class="text-2xl">Loading...</div>
+    </div>
 </div>
 
 <style>

@@ -20,7 +20,7 @@ Title: Urn
 
   const component = forwardEventHandlers()
 
-  const texture = suspend(useTexture('/models/urn/material_baseColor.png'))
+  const texture = suspend(useTexture('/models/urn/material_baseColor-min.png'))
 </script>
 
 <T is={ref} dispose={false} {...$$restProps} bind:this={$component}>
