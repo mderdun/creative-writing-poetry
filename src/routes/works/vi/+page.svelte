@@ -19,7 +19,7 @@
             <Scene />
         </Canvas>
     </div>
-    <div id="overlay">
+    <div id="overlay" class="z-20">
         <svg
                 width="50"
                 height="50"

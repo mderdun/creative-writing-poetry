@@ -142,5 +142,6 @@
         left: calc(var(--circle-size) / 2 * -1);
         pointer-events: none;
         transition: border 0.3s ease, width 0.3s ease, height 0.3s ease;
+        z-index: 9999;
     }
 </style>

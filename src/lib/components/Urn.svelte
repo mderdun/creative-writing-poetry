@@ -30,7 +30,7 @@ Title: Urn
         <T.Mesh
                 geometry={gltf.nodes.Object_4.geometry}
                 material={new MeshBasicMaterial({ map: tex })}
-                rotation={[Math.PI / 2, 1.8, 0]}
+                rotation={[Math.PI / 2, 3.5, 0]}
         />
       </T.Group>
     {/await}
