@@ -11,10 +11,10 @@
 </script>
 
 <div id="body" class="flex flex-col h-full">
-    <div>
+    <div class="z-20">
         <WorksHead title="Ode on a Polish Urn" />
     </div>
-    <div id="3d" class="h-full flex-grow">
+    <div id="3d" class="h-full flex-grow z-10">
         <Canvas>
             <Scene />
         </Canvas>
@@ -38,7 +38,7 @@
             />
         </svg>
     </div>
-    <div id="loader" class="absolute top-0 left-0 w-full h-full flex justify-center items-center z-0">
+    <div id="loader" class="absolute top-0 left-0 w-full h-full flex justify-center items-center -z-0">
         <div class="text-2xl">Loading...</div>
     </div>
 </div>
