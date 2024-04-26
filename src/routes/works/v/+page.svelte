@@ -1,5 +1,11 @@
 <script>
     import WorksHead from '$lib/components/WorksHead.svelte';
+    import { onMount } from 'svelte';
+    import {cursorColor} from "$lib/stores.js";
+
+    onMount(() => {
+        cursorColor.set("#ff0000");
+    });
 </script>
 
 <div id="body" class="h-screen bg-[#696170] text-white">

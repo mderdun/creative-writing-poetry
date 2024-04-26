@@ -5,6 +5,18 @@
     import { cursorColor, cursorPosition } from "$lib/stores.js";
     import { passwordEntered } from "$lib/stores.js";
 
+    let passwordInput = "";
+    let isDesktop = true;
+
+    const checkPassword = () => {
+        if (passwordInput === "cwp2024") {
+            passwordEntered.set(true);
+        } else {
+            passwordInput = "";
+            alert("Incorrect password");
+        }
+    }
+
     onNavigate((navigation) => {
         if (!document.startViewTransition) return;
 
@@ -25,6 +37,13 @@
     const speed = 0.35;
 
     onMount(async () => {
+        const checkWindowSize = () => {
+            isDesktop = window.innerWidth > 1023;
+        };
+
+        window.addEventListener('resize', checkWindowSize);
+        checkWindowSize();
+
         let currentCursorColor;
 
         cursorPosition.subscribe(value => {
@@ -57,7 +76,7 @@
                 currentAngle = angle;
             }
 
-            const links = document.querySelectorAll('a');
+            const links = document.querySelectorAll('a, button');
 
             // Add mouseover and mouseout event listeners to all links
             links.forEach(link => {
@@ -90,28 +109,56 @@
             circleElement.style.transform = `translate(${circle.x}px, ${circle.y}px) rotate(${currentAngle}rad) scale(${1 + currentScale}, ${1 - currentScale})`;
 
             window.requestAnimationFrame(tick);
+
         }
-
         tick();
-
-        let password;
-
-        await passwordEntered.subscribe(value => {
-            if (!value) {
-                document.body.style.filter = 'blur(8px)';
-                password = window.prompt("Enter the password to access the site", "");
-                if (password === "cwp2024") {
-                    passwordEntered.set(true);
-                    document.body.style.filter = 'none';
-                } else {
-                    location.reload();
-                }
-            }
-        });
     });
 </script>
 
+{#if !isDesktop}
+    <div class="w-screen h-screen bg-white flex items-center justify-center absolute z-[10000] cursor-none">
+        <p class="text-2xl text-center">Sorry, this site can only be viewed on desktop.</p>
+    </div>
+{/if}
+
+{#if !$passwordEntered}
+    <div class="w-screen h-screen bg-white flex flex-col items-center justify-center absolute z-10 cursor-none">
+        <div class="flex flex-col items-center">
+            <p class="text-4xl font-bold">Creative Writing Poetry</p>
+            <p class="text-2xl">- Portfolio 2024 -</p>
+            <p class="text-3xl">Z0177908</p>
+        </div>
+        <span class="h-96 inline-block" />
+        <form on:submit|preventDefault={checkPassword} class="flex flex-col items-center">
+            <input type="password" placeholder="enter password" bind:value={passwordInput}
+            class="border-2 border-dashed w-full mb-10 cursor-none rounded-lg text-center"
+            />
+            <span class="h-2 inline-block" />
+            <button type="submit" class="bg-black text-white rounded-2xl w-[2.5rem] cursor-none hover:bg-[#41fd16] transition-all flex items-center justify-center">
+                <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                            d="M15.4857 20H19.4857C20.5903 20 21.4857 19.1046 21.4857 18V6C21.4857 4.89543 20.5903 4 19.4857 4H15.4857V6H19.4857V18H15.4857V20Z"
+                            fill="currentColor"
+                    />
+                    <path
+                            d="M10.1582 17.385L8.73801 15.9768L12.6572 12.0242L3.51428 12.0242C2.96199 12.0242 2.51428 11.5765 2.51428 11.0242C2.51429 10.4719 2.962 10.0242 3.51429 10.0242L12.6765 10.0242L8.69599 6.0774L10.1042 4.6572L16.4951 10.9941L10.1582 17.385Z"
+                            fill="currentColor"
+                    />
+                </svg>
+            </button>
+        </form>
+    </div>
+{/if}
+
+<div class="slot relative">
 <slot />
+</div>
 
 <div class="circle" bind:this={circleElement} />
 

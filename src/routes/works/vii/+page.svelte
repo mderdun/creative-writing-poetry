@@ -70,7 +70,7 @@
 
 <div id="body" class="h-screen bg-slate-950 text-[#41fd16]">
     <WorksHead title="i feel like ascii-ng"/>
-    <div class="flex items-center justify-center h-[90vh]">
+    <div class="flex items-center justify-center h-[90vh] max-w-[100vw] overflow-hidden">
         {#each parts as Part, index}
             {#if index === currentPart}
                 <svelte:component this={Part} />
