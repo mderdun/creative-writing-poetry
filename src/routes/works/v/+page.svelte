@@ -2,9 +2,24 @@
     import WorksHead from '$lib/components/WorksHead.svelte';
     import { onMount } from 'svelte';
     import {cursorColor} from "$lib/stores.js";
+    import anime from "animejs";
 
     onMount(() => {
         cursorColor.set("#ff0000");
+
+        const drag = document.querySelector('.drag')
+
+        drag.addEventListener('mouseover', function (e) {
+            // If the word is already invisible (opacity is 0), do nothing
+            if (window.getComputedStyle(e.target).opacity === '0') {
+                return;
+            }
+            anime({
+                targets: e.target,
+                duration: 600,
+                opacity: 0
+            });
+        });
     });
 </script>
 
@@ -18,10 +33,11 @@
             <p>lodging <span class="w-10 inline-block" />itself in likeness</p>
             <p>the rock in goliath eyes</p>
         </div>
-        <div class="stanza heart">
+        <div class="stanza heart bg-red">
             <p>what you know about love?</p>
             <p>you ever flirted over insta?</p>
             <p class="text-sm animate-pulse text-yellow-300 blur-[0.8px]">the heart is as big as it wants to be</p>
+            <p class="drag hover:hidden">drag me</p>
         </div>
         <div class="stanza">
             <p>is sluggish if not david</p>
@@ -56,5 +72,14 @@
         border:10px dotted red;
         overflow:hidden;
         resize:both;
+    }
+    .drag {
+        position: absolute;
+        bottom: calc(-85px + 90vh / 2);
+        right: calc(-35px + (100vw - 200px) / 2);
+        font-size: 12px;
+        color: white;
+        transform: rotate(-45deg);
+        margin: 10px
     }
 </style>

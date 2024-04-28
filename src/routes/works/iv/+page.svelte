@@ -9,7 +9,7 @@
     });
 </script>
 
-<div id="body" class="bg-[#18191a] min-h-screen text-[#e4e6eb]">
+<div id="body" class="bg-[#18191a] min-h-screen text-[#e4e6eb] pb-6">
     <WorksHead title="some needs of our polish community" subtitle="Across London,&nbsp;&nbsp;Collected Digitally,&nbsp;&nbsp;Winter -> Spring 2024" />
     <div id="poem" class="flex flex-col items-center text-xl">
         <FBPost>

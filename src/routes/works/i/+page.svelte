@@ -54,7 +54,7 @@
                 if (intervalId !== undefined) {
                     window.clearInterval(intervalId);
                 }
-                light.style.background = `rgba(0, 0, 0, 0.95) 5%`;
+                light.style.background = `rgba(0, 0, 0, 0.95) 2%`;
             }
         }
 
@@ -129,6 +129,6 @@
         width: 100%;
         height: 100%;
         pointer-events: none;
-        background: rgba(0, 0, 0, 0.95) 5%;
+        background: rgba(0, 0, 0, 0.95) 3%;
     }
 </style>
