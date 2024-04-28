@@ -116,13 +116,13 @@
 </script>
 
 {#if !isDesktop}
-    <div class="w-screen h-screen bg-white flex items-center justify-center absolute z-[10000] cursor-none">
+    <div class="w-screen h-screen bg-white flex items-center justify-center absolute z-[100000] cursor-none">
         <p class="text-2xl text-center">Sorry, this site can only be viewed on desktop.</p>
     </div>
 {/if}
 
 {#if !$passwordEntered}
-    <div class="w-screen h-screen bg-white flex flex-col items-center justify-center absolute z-10 cursor-none">
+    <div class="w-screen h-screen bg-white flex flex-col items-center justify-center absolute z-[10000] cursor-none">
         <div class="flex flex-col items-center">
             <p class="text-4xl font-bold">Creative Writing Poetry</p>
             <p class="text-2xl">- Portfolio 2024 -</p>
