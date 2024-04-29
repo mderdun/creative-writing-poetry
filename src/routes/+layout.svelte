@@ -117,7 +117,7 @@
 
 {#if !isDesktop}
     <div class="w-screen h-screen bg-white flex items-center justify-center absolute z-[10000] cursor-none">
-        <p class="text-2xl text-center">Sorry, this site can only be viewed on desktop.</p>
+        <p class="text-2xl text-center">Sorry, this site can only be viewed in desktop mode (horizontal view).</p>
     </div>
 {/if}
 
